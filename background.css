@@ -1,0 +1,73 @@
+#alice {
+  animation: alice-tumbling infinite 3s linear;
+}
+
+@keyframes alice-tumbling {
+  0% {
+    color: black;
+    transform: rotate(0) translate3d(-50%, -50%, 0);
+  }
+  30% {
+    color: #431236;
+  }
+  100% {
+    color: black;
+    transform: rotate(360deg) translate3d(-50%, -50%, 0);
+  }
+}
+#tunnel {
+  animation: tunnel-fly 1s linear infinite;
+}
+
+@keyframes tunnel-fly {
+  100% {
+    transform: translate3d(0, -300px, 0);
+  }
+}
+#alice {
+  color: #431236;
+  width: 25%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+  transform: rotate(0) translate3d(-50%, -50%, 0);
+  backface-visibility: hidden;
+  will-change: transform, color;
+}
+
+path {
+  fill: currentColor;
+}
+
+#tunnel {
+  background:
+    url("/shared-assets/images/examples/web-animations/bg-tunnel-border-left.svg")
+      repeat-y,
+    url("/shared-assets/images/examples/web-animations/bg-tunnel-border-right.svg")
+      repeat-y 100% 100%,
+    url("/shared-assets/images/examples/web-animations/bg-tunnel-specks.png"),
+    #6c373f;
+  margin: 0 auto;
+  height: calc(100% + 300px);
+  width: 60%;
+  min-width: 400px;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: black;
+}
+
+html,
+body {
+  height: 100%;
+}
